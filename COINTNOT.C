@@ -1,61 +1,57 @@
-#include<stdio.h>
-#include<conio.h>
-void main ()
+#include <stdio.h>
+#include <conio.h>
+
+void main()
 {
-	int amount;
-	int note100,note20,note10,note5,note2,note1,note50;
-	int note500=note100=note20=note50=note10=note5=note2=note1=0;
-	clrscr();
-	printf("Enter Amount: ");
-	scanf("%d",&amount);
-	if(amount >=500)
+    int n, num = 0;
+
+    printf("Enter any number to print in words: ");
+    scanf("%d", &n);
+
+
+    while(n != 0)
+    {
+	num = (num * 10) + (n % 10);
+	n /= 10;
+    }
+
+    while(num != 0)
+    {
+	switch(num % 10)
 	{
-		note500 = amount/500;
-		amount -= note500*500;
-	}
-	if(amount >=100)
-	{
-		note100 = amount/100;
-		amount -= note100*100;
-	}
-	if(amount >=50)
-	{
-		note50 = amount/50;
-		amount -= note50*50;
-	}
-	if(amount >=20)
-	{
-		note20 = amount/20;
-		amount -= note20*20;
-	}
-	if(amount >=10)
-	{
-		note10 = amount/10;
-		amount -= note10*10;
-	}
-	if(amount >=5)
-	{
-		note5 = amount/5;
-		amount -= note5*5;
-	}
-	if(amount >=2)
-	{
-		note2 = amount/2;
-		amount -= note2*2;
-	} if(amount >=1)
-	{
-		note1 = amount/1;
-		amount -= note1*1;
+	    case 0:
+		printf("Zero ");
+		break;
+	    case 1:
+		printf("One ");
+		break;
+	    case 2:
+		printf("Two ");
+		break;
+	    case 3:
+		printf("Three ");
+		break;
+	    case 4:
+		printf("Four ");
+		break;
+	    case 5:
+		printf("Five ");
+		break;
+	    case 6:
+		printf("Six ");
+		break;
+	    case 7:
+		printf("Seven ");
+		break;
+	    case 8:
+		printf("Eight ");
+		break;
+	    case 9:
+		printf("Nine ");
+		break;
 	}
 
-	printf("Total Number of note = \n");
-	printf("500 = %d\n",note500);
-	printf("100 = %d\n",note100);
-	printf("50 = %d\n",note50);
-	printf("20 = %d\n",note20);
-	printf("10 = %d\n",note10);
-	printf("5 = %d\n",note5);
-	printf("2 = %d\n",note2);
-	printf("1 = %d\n",note1);
-getch();
+	num = num / 10;
+    }
+    getch();
 }
